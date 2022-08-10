@@ -1,0 +1,12 @@
+<%= form_for :session, url: sessions_path, method: :post do |f| %>
+  <div>
+    <%= f.label :name, '用户名' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :password, '密码' %>
+    <%= f.password_field :password %>
+  </div>
+
+  <%= f.submit '登录' %>
+<% end %>

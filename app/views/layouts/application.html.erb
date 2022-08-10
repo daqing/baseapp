@@ -12,7 +12,25 @@
   </head>
 
   <body>
+    <header id="header" class="border-b border-solid border-orange-300 bg-orange-200">
+      <% if user_signed_in? %>
+        <%= current_user.name %>
+        <%= link_to '退出', sign_out_path, data: {turbo_method: :delete} %>
+      <% else %>
+        <%= link_to '注册账号', new_user_path %>
+        <%= link_to '登录', sign_in_path, class: 'ml-2' %>
+      <% end %>
+    </header>
+
     <main class="container mx-auto mt-28 px-5 flex">
+      <div class="px-3 py-3">
+        <% if flash[:success] %>
+          <div class="text-center text-sm-center text-green-400"><%= flash[:success] %></div>
+        <% elsif flash[:error] %>
+          <div class="text-center text-sm-center text-red-300"><%= flash[:error] %></div>
+        <% end %>
+      </div>
+
       <%= yield %>
     </main>
   </body>
