@@ -1,12 +1,13 @@
 <%= form_for :session, url: sessions_path, method: :post do |f| %>
-  <div>
+  <div class="form-row">
     <%= f.label :name, '用户名' %>
     <%= f.text_field :name %>
   </div>
-  <div>
+
+  <div class="form-row">
     <%= f.label :password, '密码' %>
     <%= f.password_field :password %>
   </div>
 
-  <%= f.submit '登录' %>
+  <%= f.submit '登录', class: 'btn-primary' %>
 <% end %>

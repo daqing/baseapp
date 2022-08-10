@@ -1,13 +1,13 @@
 <%= form_for @user do |f| %>
-  <div class="">
-    <%= f.label :name %>
+  <div class="form-row">
+    <%= f.label :name, '用户名' %>
     <%= f.text_field :name %>
   </div>
 
-  <div class="">
-    <%= f.label :password %>
+  <div class="form-row">
+    <%= f.label :password, '密码' %>
     <%= f.password_field :password %>
   </div>
 
-  <%= f.submit "创建账号" %>
+  <%= f.submit "创建账号", class: "btn-primary" %>
 <% end %>
